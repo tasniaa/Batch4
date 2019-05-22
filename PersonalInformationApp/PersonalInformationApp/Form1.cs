@@ -33,9 +33,7 @@ namespace PersonalInformationApp
            string firstName = firstNameTextBox.Text;
            string lastName = lastNameTextBox.Text;
            string fathersName = fatherNameTextBox.Text;
-           string mothersName = motherNameTextBox.Text;
-            string add=addressButton.Text;
-
+           string mothersName = motherNameTextBox.Text;    
             string address = addressTextBox.Text;
         }
 
