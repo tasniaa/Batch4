@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace MyBookApp
 {
-    public partial class Form1 : Form
+    public partial class BookForm : Form
     {
-        public Form1()
+        public BookForm()
         {
             InitializeComponent();
+        }
+
+        private void ShowButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Hello "+ nameTextBox.Text+" " +itemComboBox.Text);
         }
     }
 }
