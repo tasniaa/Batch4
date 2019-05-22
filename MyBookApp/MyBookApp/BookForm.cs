@@ -20,7 +20,7 @@ namespace MyBookApp
 
         private void ShowButton_Click(object sender, EventArgs e)
         {
-            listBox1.Items.Add(  "                                           "+customerinformation.Text+ "\n");
+            listBox1.Items.Add(  "\t\t\t"+customerinformation.Text+ "\n\n");
             listBox1.Items.Add("Customer Name : "+nameTextBox.Text);
             listBox1.Items.Add("Contact No : "+contactTextBox.Text);
             listBox1.Items.Add("Address : " + addressTextBox.Text);
