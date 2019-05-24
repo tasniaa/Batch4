@@ -17,24 +17,72 @@ namespace MyBookApp
         {
             InitializeComponent();
         }
+        int index = 1;
+        int price;
 
-        private void ShowButton_Click(object sender, EventArgs e)
+
+
+
+
+        private void SaveButton_Click(object sender, EventArgs e)
         {
-            listBox1.Items.Add(  "\t\t\t"+customerinformation.Text+ "\n");
-            listBox1.Items.Add("Customer Name : "+nameTextBox.Text);
-            listBox1.Items.Add("Contact No : "+contactTextBox.Text);
-            listBox1.Items.Add("Address : " + addressTextBox.Text);
-            listBox1.Items.Add("Order : "+orderComboBox.Text);
-            listBox1.Items.Add("Quantity : " + quantityTextBox.Text);
+            const int size = 100;
+            string[] CustomerName = new string[size];
+            int[] ContactNo = new int[size];
+            string[] Address = new string[size];
+            string[] Order = new string[size];
+            int [] Quantity = new int [size];
+            int[] Total = new int[size];
 
-            //MessageBox.Show("Customer Name: "+ nameTextBox.Text+ "\nContact No: " + contactTextBox.Text+"\nAddress: " + addressTextBox.Text+"\nOrder: " +orderComboBox.Text+"\nQuantity: "+ quantityTextBox.Text);
+
+
+            CustomerName[index] = nameTextBox.Text;
+            ContactNo[index] = Convert.ToInt32(contactTextBox.Text);
+            Address[index] = addressTextBox.Text;
+            Order[index] = orderComboBox.Text;
+            Quantity[index] = Convert.ToInt32(quantityTextBox.Text);
+
+
+            if (Order[index].Equals("Math"))
+            {
+                price = 120;
+
+            }
+            else if (Order[index].Equals("English"))
+            {
+                price = 100;
+
+            }
+            else if (Order[index].Equals("Bangla"))
+            {
+                price = 90;
+
+            }
+            else if (Order[index].Equals("Art"))
+            {
+                price = 80;
+
+            }
+            Total[index] = Convert.ToInt32(Quantity[index]) * price;
+
+            saveRichTextBox.SelectedText = ("\n\tCustomer Number " + index + ". Order Information : \n\n");
+            saveRichTextBox.SelectedText = (" Name :   " + CustomerName[index] + "\n");
+            saveRichTextBox.SelectedText = (" Contact No :   " + ContactNo[index] + "\n");
+            saveRichTextBox.SelectedText = (" Address :   " + Address[index] + "\n");
+            saveRichTextBox.SelectedText = (" Order :   " + Order[index] + "\n");
+            saveRichTextBox.SelectedText = (" Quantity :   " + Quantity[index] + "\n");
+            saveRichTextBox.SelectedText = (" Total Price :   " + Total[index] + " Tk.\n");
+            index++;
+
+            nameTextBox.Clear();
+            contactTextBox.Clear();
+            addressTextBox.Clear();
+            orderComboBox.ResetText();
+            quantityTextBox.Clear(); ;
         }
 
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-      
-
-        }
     }
 }
+
+       
+
